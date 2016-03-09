@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0C52AD4AB6679457E2BF9A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D65F9CE0FB0DDA2D174E8BF7 /* libPods.a */; };
 		F424C4CF1C8FEE29000EA137 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F424C4CE1C8FEE29000EA137 /* main.m */; };
 		F424C4D21C8FEE29000EA137 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F424C4D11C8FEE29000EA137 /* AppDelegate.m */; };
 		F424C4D51C8FEE29000EA137 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F424C4D41C8FEE29000EA137 /* ViewController.m */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80F58F8FC3A030D54751F9F8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C98AD16FE006189C3FAF24AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D65F9CE0FB0DDA2D174E8BF7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F424C4CA1C8FEE29000EA137 /* LinkGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F424C4CE1C8FEE29000EA137 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F424C4D01C8FEE29000EA137 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0C52AD4AB6679457E2BF9A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89AC67CB05760A59F5CB57B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D65F9CE0FB0DDA2D174E8BF7 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2BEDA80AA4CBF740CEDBC1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80F58F8FC3A030D54751F9F8 /* Pods.debug.xcconfig */,
+				C98AD16FE006189C3FAF24AB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F424C4C11C8FEE29000EA137 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				F424C4E61C8FEE29000EA137 /* LinkGameTests */,
 				F424C4F11C8FEE29000EA137 /* LinkGameUITests */,
 				F424C4CB1C8FEE29000EA137 /* Products */,
+				E2BEDA80AA4CBF740CEDBC1A /* Pods */,
+				89AC67CB05760A59F5CB57B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F424C4F71C8FEE29000EA137 /* Build configuration list for PBXNativeTarget "LinkGame" */;
 			buildPhases = (
+				CBD77BCB0014054BF29F1A41 /* Check Pods Manifest.lock */,
 				F424C4C61C8FEE29000EA137 /* Sources */,
 				F424C4C71C8FEE29000EA137 /* Frameworks */,
 				F424C4C81C8FEE29000EA137 /* Resources */,
+				FEA4963316B487F09A38487D /* Embed Pods Frameworks */,
+				31B30BDA857F4931D17D8F80 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +291,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31B30BDA857F4931D17D8F80 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD77BCB0014054BF29F1A41 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FEA4963316B487F09A38487D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F424C4C61C8FEE29000EA137 /* Sources */ = {
@@ -411,6 +486,7 @@
 		};
 		F424C4F81C8FEE29000EA137 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80F58F8FC3A030D54751F9F8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LinkGame/Info.plist;
@@ -422,6 +498,7 @@
 		};
 		F424C4F91C8FEE29000EA137 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C98AD16FE006189C3FAF24AB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LinkGame/Info.plist;
@@ -498,6 +575,7 @@
 				F424C4F91C8FEE29000EA137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F424C4FA1C8FEE29000EA137 /* Build configuration list for PBXNativeTarget "LinkGameTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +584,7 @@
 				F424C4FC1C8FEE29000EA137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F424C4FD1C8FEE29000EA137 /* Build configuration list for PBXNativeTarget "LinkGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +593,7 @@
 				F424C4FF1C8FEE29000EA137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
